@@ -19,6 +19,26 @@ class App extends Component {
   }
 
   render() {
+
+    // ①upgradeButton初期の要素
+    let upgradeButton = (
+      <p
+        onClick={this.onClickHandler}
+        id="upgradeButton"
+        className="upgrade-button"
+      >バージョンUP</p>
+    );
+
+    // ②upgradeButton初期の要素
+    if( this.state.version === '5.0'){
+      upgradeButton = (
+        //バージョンが5.0になった時に表示されて欲しいボタン
+        <p
+          className="upgraded-button"
+        >もう更新できません</p>
+      );
+    }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -31,6 +51,7 @@ class App extends Component {
               {this.state.version}
             </span>
           </Title>
+          {upgradeButton}
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
