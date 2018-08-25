@@ -6,7 +6,10 @@ import Title from './components/Title/Title';
 
 class App extends Component {
   
-  state = { version: '1.0'}
+  constructor(){
+    super()
+    this.state = { version: '1.0'}
+  }
 
   onClickHandler = () => {
     // click時に発火する
