@@ -15,8 +15,7 @@ class App extends Component {
     // click時に発火する
     // タイトルを上書きしてボタンを消す
     console.log("更新ボタンがクリックされました");
-    document.getElementById('versionCounter').textContent = "2.0";
-    document.getElementById('upgradeButton').style.display = "none";
+    this.setState({ version: (parseInt(this.state.version, 10) + 1).toFixed(1)})
   }
 
   render() {
@@ -27,7 +26,10 @@ class App extends Component {
           <Title
             titleStyle={{color: 'orange'}}
             onClick={this.onClickHandler}
-          >へい、おまち<span id="versionCounter" style={{borderBottom: '1px solid orange'}}>1.0</span>
+          >へい、おまち
+            <span id="versionCounter" style={{borderBottom: '1px solid orange'}}>
+              {this.state.version}
+            </span>
           </Title>
         </header>
         <p className="App-intro">
