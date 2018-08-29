@@ -1,0 +1,6 @@
+.videoBox {
+    font-weight: bold;
+    background: gray;
+    border: solid 3px black;/*線*/
+    border-radius: 20px;/*角の丸み*/
+}

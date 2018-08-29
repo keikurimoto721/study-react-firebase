@@ -22,7 +22,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Body>
-          <Video />
+          <Video video={this.state.videos[0]}/>
           <List videos={this.state.videos}/>
         </Body>
       </div>
