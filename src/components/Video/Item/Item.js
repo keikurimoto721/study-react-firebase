@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Item = (props) => {
-  console.log("Propsを受け取りました");
-  console.log(props);
+
   return (
-    <li className="list-group-item">
+    <li className="list-group-item" onClick={() => props.onClicked(props.video)}>
       <div className="video-list media">
         <div className="media-left">
           <img className="mr-3" src={props.video.snippet.thumbnails.default.url} />
