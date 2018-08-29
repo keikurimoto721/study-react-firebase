@@ -14,7 +14,7 @@ class App extends Component {
             selectedVideo: null}
 
   componentDidMount() {
-    YoutubeSearch({ key: YOUTUBE_API_KEY, term: 'ジョジョ　4部'}, (data) => {
+    YoutubeSearch({ key: YOUTUBE_API_KEY, term: 'ジョジョ OP'}, (data) => {
       this.setState({ videos: data, selectedVideo: data[0] })
     });
   }
@@ -23,10 +23,20 @@ class App extends Component {
     this.setState({selectedVideo: video })
   }
 
+  onKeywordChanged = (keyword) => {
+    let newTerm = 'ジョジョ ' + keyword;
+    if (keyword === '') {
+      newTerm = 'ジョジョ OP';
+    }
+    YoutubeSearch({ key: YOUTUBE_API_KEY, term: newTerm}, (data) => {
+      this.setState({ videos: data, selectedVideo: data[0] })
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header onChanged={this.onKeywordChanged}/>
         <Body>
           <Video video={this.state.selectedVideo}/>
           <List videos={this.state.videos}
