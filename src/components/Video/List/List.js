@@ -9,6 +9,7 @@ const List = (props) => {
         <Item video={video} key={index} onClicked={props.onClicked}/>
       );
     }
+    return false;
   });
 
   return (
