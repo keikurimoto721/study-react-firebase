@@ -17,10 +17,10 @@ class Header extends Component {
     }
 
     return (
-        <nav className="navbar navbar-expand navbar-light bg-light mb-3 p-3">
+        <nav className="navbar navbar-expand navbar-light bg-dark mb-3 p-3">
           <h2 className="mb-0" >
-            <span className="bg-dark text-white p-2 mr-2" style={fontStyle}>承</span>
-            <span className="d-none d-md-inline" style={fontStyle}>JoJoTube</span>
+            <span className="bg-light text-black p-2 mr-2" style={fontStyle}>承</span>
+            <span className="d-none d-md-inline text-white" style={fontStyle}>JoJoTube</span>
           </h2>
           <form className="form-group my-2 my-lg-0 ml-sm-2 ">
             <input
